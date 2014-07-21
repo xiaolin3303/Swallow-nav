@@ -1,0 +1,103 @@
+.swallow-nav{
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0,.4);
+	background-color: white;
+	overflow: hidden;
+	width: 40px;
+	height: 40px;
+	transition: 0.2s all linear;
+	-webkit-transition: 0.2s all linear;
+}
+.swallow-nav .list{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 250px;
+}
+.swallow-nav .list li{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #DEDFD9;
+
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+
+	cursor: pointer;
+}
+.swallow-nav .list.slide-in-anmiation li a{
+	animation-name: slide-in;
+	-webkit-animation-name: slide-in;
+	-webkit-animation-duration: .4s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-iteration-count: 1;
+}
+.swallow-nav .list.slide-in-anmiation li:nth-last-of-type(1) a{
+	-webkit-animation-delay: .2s;
+}
+.swallow-nav .list.slide-in-anmiation li:nth-last-of-type(2) a{
+	-webkit-animation-delay: .1s;
+}
+@-webkit-keyframes 'slide-in' {
+	from {left: 40px; opacity: 0.2}
+	to {left: 0px; opacity: 1}
+}
+.swallow-nav .list li a{
+	display: block;
+	height: 40px;
+	padding: 0 10px;
+	color: black;
+	text-decoration: none;
+	position: relative;
+}
+.swallow-nav .list li a:hover{
+	background-color: #F08B6F;
+	color: white;
+	font-weight: bold;
+}
+.swallow-nav .control-btn{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	display: block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+.swallow-nav .control-btn::before, .swallow-nav .control-btn::after, .swallow-nav .control-btn i{
+	content: '';
+	display: block;
+	width: 20px;
+	height: 2px;
+	position: absolute;
+	left: 10px;
+	top: 19px;
+	background-color: #272822;
+}
+.swallow-nav .control-btn::before, .swallow-nav .control-btn::after{
+	transition: 0.2s all linear;
+	-webkit-transition: 0.2s all linear;
+}
+.swallow-nav .control-btn.close i{
+	visibility: hidden;
+}
+.swallow-nav .control-btn.close::before{
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+.swallow-nav .control-btn.expand i{
+	visibility: visible;
+}
+.swallow-nav .control-btn.close::after{
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+}
+.swallow-nav .control-btn.expand::before{
+	top: 12px;
+}
+.swallow-nav .control-btn.expand::after{
+	top: 26px;
+}

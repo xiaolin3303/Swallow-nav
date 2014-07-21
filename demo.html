@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Swallow-nav Demo</title>
+	<link rel="stylesheet" type="text/css" href="css/swallow-nav.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-swallow-nav.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#nav-wrap').swallow_nav({
+				'list': [{'cnt': 'item 1', 'custom': 'my_value'}, {'cnt': 'item 2', 'href': 'http://g.cn'}, {'cnt': 'item 3'}, {'cnt': 'item 4'}],
+				'onItemClick': function(item) {
+					/*
+					 * 这里的item会原样返回上面list属性中用户设置的对应item
+					 * item必须传递cnt属性，这会作为nav的每项的文案显示
+					 * href参数可选，如果传递，点击该item会跳转到对应页面
+					 * 除了cnt, href属性，用户可以自定义其他属性传递
+					 */
+					console.log(item);
+					//return false能够阻止设置过href属性的的item的跳转
+					return false;
+				}
+			});
+		});
+	</script>
+	<style type="text/css">
+		html, body{
+			font-family:"Times New Roman",Georgia,Serif;
+			margin: 0;
+			padding: 0;
+			background-color: rgb(44, 62, 81);
+		}
+	</style>
+</head>
+<body>
+	<div id="nav-wrap"></div>
+</body>
+</html>
